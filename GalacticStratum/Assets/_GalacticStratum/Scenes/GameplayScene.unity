@@ -596,7 +596,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
   maxSpeed: 10
-  secondsToReachMaxSpeed: 10
+  secondsToReachMaxSpeed: 5
+  secondsToStop: 2
+  rotationSpeed: 100
+  driftFactor: 0.1
   move: {fileID: -3591443006272381160, guid: f763683b805aa274788d9049077dfc10, type: 3}
 --- !u!114 &1473136877
 MonoBehaviour:
