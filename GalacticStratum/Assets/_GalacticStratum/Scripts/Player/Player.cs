@@ -1,6 +1,6 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 public class Player : MonoBehaviour
 {
@@ -14,7 +14,17 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private Vector2 moveInputValue;
 
+    private float zoomInputValue;
+
+    [Header("Inputs")]
     [SerializeField] private InputActionReference move;
+    [SerializeField] private InputActionReference zoom;
+
+    [Header("Camera")]
+    [SerializeField] private CinemachineCamera mainCamera;
+    [SerializeField] private float zoomSpeed;
+    [SerializeField] private float minZoom;
+    [SerializeField] private float maxZoom;
 
     private Rigidbody2D rigidBody;
 
@@ -26,6 +36,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HandleActions();
+        ApplyZoom();
     }
 
     private void FixedUpdate()
@@ -37,6 +48,7 @@ public class Player : MonoBehaviour
     private void HandleActions()
     {
         moveInputValue = move.action.ReadValue<Vector2>();
+        zoomInputValue = zoom.action.ReadValue<float>();
     }
 
     private void FixDrift()
@@ -72,6 +84,17 @@ public class Player : MonoBehaviour
             float targetAngle = -moveInputValue.x * rotationSpeed * Time.fixedDeltaTime;
 
             rigidBody.MoveRotation(rigidBody.rotation + targetAngle);
+        }
+    }
+
+    private void ApplyZoom()
+    {
+        if (zoomInputValue != 0)
+        {
+            float zoomMultiplier = zoomInputValue * zoomSpeed;
+            float currentZoom = mainCamera.Lens.OrthographicSize;
+
+            mainCamera.Lens.OrthographicSize = Mathf.Clamp(currentZoom - zoomMultiplier, minZoom, maxZoom);
         }
     }
 }
