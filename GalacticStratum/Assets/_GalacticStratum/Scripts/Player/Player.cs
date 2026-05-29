@@ -21,16 +21,19 @@ public class Player : MonoBehaviour
     [SerializeField] private InputActionReference zoom;
 
     [Header("Camera")]
-    [SerializeField] private CinemachineCamera mainCamera;
+    public CinemachineCamera mainCamera;
+    public Collider2D map;
     [SerializeField] private float zoomSpeed;
     [SerializeField] private float minZoom;
     [SerializeField] private float maxZoom;
 
     private Rigidbody2D rigidBody;
+    private CinemachineConfiner2D confiner;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        confiner = mainCamera.GetComponent<CinemachineConfiner2D>();
     }
 
     private void Update()
