@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AsteroidVisualData
   sprites:
   - sprite: {fileID: 21300000, guid: 704e4c61c947e214f8ef75f5be1a7efa, type: 3}
-    brushSprite: {fileID: 21300000, guid: 910865797585cd740abf102252dba644, type: 3}
+    brushSprite: {fileID: 21300000, guid: 7468e914414545a4f8e0503317cc3c46, type: 3}
   - sprite: {fileID: 21300000, guid: 71d8dd269996a314aa07ca16c1017007, type: 3}
-    brushSprite: {fileID: 21300000, guid: 0cffcfb49d729bd42893923507672fbf, type: 3}
+    brushSprite: {fileID: 21300000, guid: f5696f0511f96d14697dde4a5802b289, type: 3}
+  - sprite: {fileID: 21300000, guid: bbfadbb4f469b2944a34093a2ab2a706, type: 3}
+    brushSprite: {fileID: 21300000, guid: e321da50568b44b4cb5b46d9a5f2477b, type: 3}

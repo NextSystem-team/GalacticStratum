@@ -142,10 +142,10 @@ TextureImporter:
       name: Spr_Asteroid1_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 43
+        x: 37
+        y: 53
         width: 182
-        height: 154
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+        confiner = mainCamera.GetComponent<CinemachineConfiner2D>();
     }
 
     private void Update()
@@ -97,6 +98,8 @@ public class Player : MonoBehaviour
             float currentZoom = mainCamera.Lens.OrthographicSize;
 
             mainCamera.Lens.OrthographicSize = Mathf.Clamp(currentZoom - zoomMultiplier, minZoom, maxZoom);
+
+            confiner.InvalidateBoundingShapeCache();
         }
     }
 }

@@ -197,9 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAim
   aimZoneRadius: 10
   isAiming: 0
-  useToolInput: {fileID: -5180914884982539946, guid: f763683b805aa274788d9049077dfc10, type: 3}
-  mousePosition: {fileID: 473418938978225786, guid: f763683b805aa274788d9049077dfc10, type: 3}
-  mainCamera: {fileID: 0}
+  clickInput: {fileID: 0}
 --- !u!1 &8619044556369516592
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,7 +211,7 @@ GameObject:
   - component: {fileID: 5164564251838243585}
   - component: {fileID: 7346719970475662528}
   - component: {fileID: 6831088424903405961}
-  - component: {fileID: 1208683016338201160}
+  - component: {fileID: 1291257139840745126}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -287,8 +285,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3e9e8b27041cf2d4c8383bf381d68d2d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -358,10 +356,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 12cf6a95-345f-47f6-9f33-1c9e95f6b6bd
     m_ActionName: 'Player/UseTool[/Mouse/leftButton]'
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dc7f2103-3d97-416f-8a89-783e19f5e621
-    m_ActionName: 'Player/PointerPosition[/Mouse/position]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -394,8 +388,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &1208683016338201160
-BoxCollider2D:
+--- !u!70 &1291257139840745126
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -428,15 +422,6 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.21133333}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.05, y: 1.69}
+  m_Direction: 0
