@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        confiner = mainCamera.GetComponent<CinemachineConfiner2D>();
     }
 
     private void Update()
